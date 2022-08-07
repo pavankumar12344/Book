@@ -3,6 +3,7 @@
 	<name>Book</name>
 	<comment>Project Book created by Buildship.</comment>
 	<projects>
+		<project>Book-lib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -4,49 +4,60 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.NamedQuery;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table
+@NamedQuery(name = "QUERY_GET_BY_ID", query = "SELECT b FROM Book b JOIN b.author a WHERE a.bid=?1")
 public class Book {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	private int bid;
 	private String title;
+	@ManyToOne
+	@JsonIgnore
+	private Author author;
 	
-	private String authorName;
-
+	
+	public Book() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Book(int bid, String title, Author author) {
+		super();
+		this.bid = bid;
+		this.title = title;
+		this.author = author;
+	}
 	public int getId() {
-		return id;
+		return bid;
 	}
-
 	public void setId(int id) {
-		this.id = id;
+		this.bid = id;
 	}
-
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	public String getAuthorName() {
-		return authorName;
+	public Author getAuthor() {
+		return author;
 	}
-
-	public void setAuthorName(String authorName) {
-		this.authorName = authorName;
+	public void setAuthor(Author author) {
+		this.author = author;
 	}
-
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", authorName=" + authorName + "]";
+		return "Book [bid=" + bid + ", title=" + title + ", author=" + "]";
 	}
 
 	
-
 }

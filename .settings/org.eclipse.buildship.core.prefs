@@ -1,2 +1,13 @@
+arguments=
+auto.sync=false
+build.scans.enabled=false
+connection.gradle.distribution=GRADLE_DISTRIBUTION(LOCAL_INSTALLATION(C\:\\Users\\pavan.chowdam\\Downloads\\gradle-7.5-bin\\gradle-7.5))
 connection.project.dir=
 eclipse.preferences.version=1
+gradle.user.home=C\:/Users/pavan.chowdam/.gradle
+java.home=C\:/Program Files/Zulu/zulu-17-jre
+jvm.arguments=
+offline.mode=false
+override.workspace.settings=true
+show.console.view=true
+show.executions.view=true
